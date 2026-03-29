@@ -1,0 +1,154 @@
+.secondSection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+}
+.threeMenu {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+}
+.threeMenu a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.coffeeShow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.coffeeShow h2 {
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    text-decoration: none;
+}
+.img-wrapper {
+    width: 430px; 
+    height: 380px;
+    border-radius: 10px; 
+}
+.coffeeShowImg {
+    width: 430px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.coffeeShowImg:hover {
+    transform: scale(1.03);
+}
+.coffeeFix {
+    width: 100%;
+    height: 380px;
+    border-radius: 10px;
+    background-color: var(--accent-color);
+    padding: 60px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.coffeeFixContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+}
+.coffeeFixImg {
+    min-width: 500px;
+    position: relative;
+}
+.coffeeFixImg {
+    width: 80px;
+    height: 280px;
+    object-fit: cover;
+}
+.coffeeFixImg.one {
+    position: absolute;
+    transform: translate(45%, 0);
+    top: 0;
+    left: 0;
+    animation: slideIn 1s ease-out forwards;
+}
+.getCoffeeFixTitle {
+    font-size: 36px;
+    color: var(--primary-color);
+    font-family: var(--secondary-font-family);
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+.getCoffeeFixPara {
+    font-size: 16px;
+    color: var(--primary-color);
+    font-family: var(--primary-font-family);
+    line-height: 25px;
+}
+.getCoffeeFixBtn {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px 5px 19px;
+    background-color: var(--primary-color);
+    gap: 7px;
+    color: var(--background-color);
+    text-decoration: none;
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    border-radius: 60px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+.coffeeFixImg {
+    position: relative;
+}
+.coffeeBag {
+    position: absolute;
+    width: 450px;
+    transition: all 0.6s ease;
+    transform-origin: bottom center; 
+}
+.bag1 {
+    z-index: 3;
+    transform: translateX(-5px) rotate(18deg);
+}
+.bag2 {
+    z-index: 2;
+    transform: translateX(25px) rotate(0deg);
+}
+.bag3 {
+    z-index: 1;
+    transform: translateX(60px) rotate(-18deg);
+}
+.coffeeFix:hover .bag1 {
+    transform: translateX(-20px) rotate(-18deg);
+}
+.coffeeFix:hover .bag2 {
+    transform: translateX(40px) rotate(0deg);
+}
+.coffeeFix:hover .bag3 {
+    transform: translateX(90px) rotate(18deg);
+}
+.letter-animate span {
+  display: inline-block; /* စာသားတွေ ပုံမပျက်စေရန် */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Show class တက်လာရင် animation စမယ် */
+.letter-animate.show span {
+  animation: letterUp 0.5s ease forwards;
+}
+
+@keyframes letterUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,16 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Marhey:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Marhey:wght@300..700&display=swap');
+@import url(coffeeSection.css);
+@import url(productsDetail.css);
+@import url(nav.css);
+@import url(homeSlider.css);
+@import url(secondSection.css);
+@import url(hotItemsSection.css);
+@import url(footer.css);
+@import url(infographic.css);
+@import url(cart.css);
 
 :root {
     --primary-color: #400801; 
+    --primary2-color: #4e0a00d5; 
     --secondary-color: #C9A66B; 
     --darkbrown-color: #392311;
     --accent-color: #F4E1D2;
     --background-color: #F9F7F2;
+    --card-bac-color: #EDE4E0;
     --white-color: #FFFFFF;
     --body-font-size: 16px;
     --title-font-size: 36px;
     --primary-font-family: 'Lato', sans-serif;  
-    --secondary-font-family: 'Marhey', sans-serif;
+    --secondary-font-family: 'Belleza', sans-serif;
 }
 * {
     box-sizing: border-box;
@@ -22,31 +33,26 @@
   font-weight: 300;
   font-style: normal;
 }
-
 .lato-regular {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-
 .lato-bold {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
-
 .lato-light-italic {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-style: italic;
 }
-
 .lato-regular-italic {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
-
 body {
     background-color: var(--background-color);
     font-family: var(--primary-font-family);
@@ -55,168 +61,4 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* padding: 30px 10%; */
-    padding: 30px 0;
-    
-    position: sticky; 
-    top: 0;
-    left: 0;
-    /* width: 100%; */
-    z-index: 1000; 
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px);
-}
-.navbar ul {
-    display: flex;
-}
-.navbar ul li {
-    list-style-type: none;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-family: var(--primary-font-family);
-    font-weight: 400;
-    font-size: 16px;
-    padding: 10px 5px;
-    transition: color 0.3s ease;
-    text-transform: uppercase;
-}
-.navbar ul.nav1 {
-    gap: 50px;
-}
-.navbar ul.nav2 {
-    gap: 20px;
-}
-.navbar ul.nav1 li a {
-    transition: color 0.3s ease;
-    position: relative;
-}
 
-.navbar ul li a:hover {
-    color: #881204;
-}
-
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: var(--secondary-font-family);
-    font-weight: 500;
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.slide.one {
-    background: linear-gradient(rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.69)), url(../img/enjoyingCoffeeSlider.png) no-repeat center center/cover;
-}
-.slide.two {
-    background: linear-gradient(rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.69)), url(../img/brewEquipmentSlider.png) no-repeat center center/cover;
-}
-.slide.three {
-    background: linear-gradient(rgba(0, 0, 0, 0.69), rgba(0, 0, 0, 0.69)), url(../img/coffeeBeanSlider.png) no-repeat center center/cover;
-}
-.homeTitle {
-    font-size: 60px;
-    font-weight: 700;
-    color: var(--primary-color);
-    font-family: var(--primary-font-family);
-    color: var(--background-color);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    line-height: 130%;
-}
-.homePara {
-    font-size: 16px;
-    color: var(--background-color);
-    font-family: var(--primary-font-family);
-    max-width: 600px;
-    margin-bottom: 30px;
-    line-height: 25px;
-}
-.exploreBtn {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 5px 5px 19px;
-    background-color: var(--background-color);
-    gap: 7px;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-family: var(--primary-font-family);
-    font-weight: 400;
-    border-radius: 60px;
-    font-size: 16px;
-    transition: 0.3s ease-in-out;
-}
-.exploreBtn:hover {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-}
-
-.home {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
-}
-
-.slideWrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    transform: scale(1.1); 
-    transition: opacity 1s ease-in-out, transform 1.2s ease-out;
-    z-index: 1;
-    opacity: 0; 
-    pointer-events: none;
-}
-
-.slide.active {
-    opacity: 1;
-    pointer-events: auto;   
-    transform: scale(1); 
-    z-index: 2;            
-}
-
-.slider-nav {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 15px;
-    z-index: 10;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.dot.active {
-    background-color: var(--secondary-color);
-    width: 30px;
-    border-radius: 10px;
-}
