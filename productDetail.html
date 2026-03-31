@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://api.iconify.design/material-symbols-light.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <section class="productDetailSection">
+      <div class="productDetail">
+        <div class="productDetailImageWrapper">
+          <img id="product-img" alt="Coffee" class="productDetailImg" />
+          <span class="productDetailHot">🔥 Hot Item</span>
+        </div>
+        <div class="productDetailContent">
+          <div class="productDetailHead">
+            <div class="productDetailHeader">
+              <h2 id="product-name"></h2>
+              <p class="productDetailPrice" id="product-price">$</p>
+            </div>
+            <a href="">
+              <iconify-icon icon="ph:heart-light" width="25" height="25"></iconify-icon></iconify-icon></a>
+            </a>
+          </div>
+          <hr />
+          <div class="flavourNotesDiv" id="desDiv">
+            <h3 class="flavourNotesDetail">Description</h3>
+            <p class="productDetailDescription" id="product-description"></p>
+          </div>
+          <div class="flavourNotesDiv" id="usageDiv">
+            <h3 class="flavourNotesDetail">Usage</h3>
+            <p class="flavourNotesContentDetail" id="brewingKitUsage"></p>
+          </div>
+          <div class="flavourNotesDiv" id="flavourNotesDiv">
+            <h3 class="flavourNotesDetail">Flavour Notes</h3>
+            <p class="flavourNotesContentDetail" id="flavourNotesContentDetail"></p>
+          </div>
+          <div class="brewingMethodsDiv" id="brewingMethodsDiv">
+            <h3 class="flavourNotesDetail">Brewing Methods</h3>
+            <img alt="Brewing Method" class="brewingMethodsImg" id="brewingMethodsImg">
+          </div>
+          <span class="productDetailCategory" id="product-category"></span>
+          <span class="productDetailCategory" id="import-country"></span>
+          <div class="quantity-selector">
+            <button id="minus">-</button>
+            <input id="quantity" type="number" min="1" value="1" readonly />
+            <button id="plus">+</button>
+          </div>
+          <button id="addToCart" type="submit">Add To Cart - $</button>
+        </div>
+      </div>
+    </section>
+    <footer id="footer"></footer>
+  </main>
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>CUSTOMER CARE</h4>
+        <ul>
+          <li><a href="#">CONTACT US</a></li>
+          <li><a href="#">CALL NOW: 800 227 8437</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>OUR COMPANY</h4>
+        <ul>
+          <li><a href="#">FIND A BOUTIQUE ↗</a></li>
+          <li><a href="#">OUR STORY ↗</a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>EXPLORE</h4>
+        <ul>
+          <li><a href="#">SUSCRIPTION</a></li>
+          <li><a href="#">MERCH</a></li>
+          <li><a href="#">ABOUT OUR COFFEE</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>FOLLOW US</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="js/header.js"></script>
+<script src="js/script.js"></script>
+
+</html>

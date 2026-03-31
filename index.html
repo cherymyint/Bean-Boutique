@@ -1,50 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bean Boutique</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://api.iconify.design/material-symbols-light.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar container">
-        <a href="#" class="logo">Bean Boutique</a>
-        <ul class="nav1">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Suscription</a></li>
-          <li><a href="#">Events</a></li>
-        </ul>
-        <ul class="nav2">
-          <li>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-regular fa-heart"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-regular fa-user"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="home">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bean Boutique</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://api.iconify.design/material-symbols-light.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <section class="homeSection" id="homeSection">
+      <div class="home">
         <div class="slideWrapper">
-          <div class="slide container one active">
+          <div class="slide one active">
             <h1 class="homeTitle">
               Fresh Coffee,
               <br />
@@ -54,14 +28,9 @@
               Enjoy handcrafted coffee in a comfortable space where people
               gather, share ideas, and relax together.
             </p>
-            <a href="#" class="exploreBtn"
-              >More Info
-              <iconify-icon
-                class="exploreIcon"
-                icon="pepicons-pencil:arrow-up-right-circle-filled"
-                width="40"
-                height="40"
-              ></iconify-icon>
+            <a href="events.html" class="exploreBtnWhite">Join Now
+              <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+                height="40"></iconify-icon>
             </a>
           </div>
           <div class="slide two">
@@ -74,14 +43,9 @@
               Brew café-style coffee at home with our easy-to-use brewing
               equipment. Enjoy fresh, delicious coffee anytime.
             </p>
-            <a href="#" class="exploreBtn"
-              >Shop Now
-              <iconify-icon
-                class="exploreIcon"
-                icon="pepicons-pencil:arrow-up-right-circle-filled"
-                width="40"
-                height="40"
-              ></iconify-icon>
+            <a href="brewingEqu.html" class="exploreBtnWhite">Shop Now
+              <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+                height="40"></iconify-icon>
             </a>
           </div>
           <div class="slide three">
@@ -94,14 +58,9 @@
               Enjoy rich and flavorful coffee made from carefully selected
               beans. Discover now!
             </p>
-            <a href="#" class="exploreBtn"
-              >Discover
-              <iconify-icon
-                class="exploreIcon"
-                icon="pepicons-pencil:arrow-up-right-circle-filled"
-                width="40"
-                height="40"
-              ></iconify-icon>
+            <a href="bean.html" class="exploreBtnWhite">Discover
+              <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+                height="40"></iconify-icon>
             </a>
           </div>
           <div class="slider-nav">
@@ -110,9 +69,192 @@
             <span class="dot"></span>
           </div>
         </div>
-      </section>
-    </main>
-  </body>
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  <script src="js/script.js"></script>
+      </div>
+    </section>
+    <section class="secondSection container">
+      <div class="threeMenu">
+        <div class="coffeeShow">
+          <a href="coffee.html" class="img-wrap">
+            <img src="img/coffees1.webp" alt="Coffees" class="coffeeShowImg" />
+          </a>
+          <h2>Our Coffees</h2>
+        </div>
+        <div class="coffeeShow">
+          <a href="snacks.html" class="img-wrap">
+            <img src="img/SnacksPoster.png" alt="Coffee Beans" class="coffeeShowImg" />
+          </a>
+          <h2>Snacks</h2>
+        </div>
+        <div class="coffeeShow">
+          <a href="brewingEqu.html" class="img-wrap">
+            <img src="img/BrewEqipments.webp" alt="Brew Equipments" class="coffeeShowImg" />
+          </a>
+          <h2>Brew Equipments</h2>
+        </div>
+      </div>
+      <div class="coffeeFix">
+        <div class="coffeeFixContent">
+          <h2 class="getCoffeeFixTitle letter-animate">
+            Get your Coffee Fix
+          </h2>
+
+          <p class="getCoffeeFixPara">
+            Subscribe or make a one time purchase. Try our range of coffee
+            available as whole beans or ground.
+          </p>
+
+          <a href="bean.html" class="exploreBtnRed">
+            Shop Now
+            <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+              height="40"></iconify-icon>
+          </a>
+        </div>
+        <div class="coffeeFixImg">
+          <img src="img/CoffeeFixBlue.png" class="coffeeBag bag1" />
+          <img src="img/CoffeeFixRed.png" class="coffeeBag bag2" />
+          <img src="img/CoffeeFixGreen.png" class="coffeeBag bag3" />
+        </div>
+      </div>
+    </section>
+    <section class="infographicSection1 container">
+      <img class="brewMethodsInfo1" src="img/Infographic1.png" alt="Brewing Method">
+      <img class="brewMethodsInfo2" src="img/ll-Photoroom (1).png" alt="Brewing Method">
+    </section>
+    <section class="hotItemsSection container">
+      <h2 class="hotItemSectionTitle">Hot Items</h2>
+      <div class="hotItems">
+        <div class="hotItem first">
+          <img src="img/Hot_Item_coffee1.png" alt="" class="hotItemImg" />
+          <h2 class="hotItemTitle">Ice Coffee Set</h2>
+          <p class="hotItemPara">
+            Experience the art of the perfect pour. At Bean Boutique, our Fine Roastery Selection uses premium beans and
+            expert brewing to hit different.
+          </p>
+          <a href="productDetail.html?id=1" class="exploreBtnRed">
+            Shop Now
+            <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+              height="40"></iconify-icon>
+          </a>
+        </div>
+        <div class="hotItem second">
+          <img src="img/Hot_Item_Waffel.png" alt="" class="hotItemImg" />
+          <h2 class="hotItemTitle">Heart-Shaped Waffles</h2>
+          <p class="hotItemPara">
+            Share the sweetness with our Signature Heart Waffles. Topped with fresh strawberries and velvety whipped
+            cream.
+          </p>
+          <a href="productDetail.html?id=31" class="exploreBtnRed">
+            Shop Now
+            <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+              height="40"></iconify-icon>
+          </a>
+        </div>
+        <div class="hotItem third">
+          <img src="img/Hot_Item_Coffee2.png" alt="" class="hotItemImg" />
+          <h2 class="hotItemTitle">Hot Coffee Set</h2>
+          <p class="hotItemPara">
+            Experience the art of the perfect pour. At Bean Boutique, our Fine Roastery Selection uses premium beans and
+            expert brewing to hit different.
+          </p>
+          <a href="productDetail.html?id=2" class="exploreBtnRed">
+            Shop Now
+            <iconify-icon class="exploreIcon" icon="pepicons-pencil:arrow-up-right-circle-filled" width="40"
+              height="40"></iconify-icon>
+          </a>
+        </div>
+      </div>
+      <p class="hotItemsFooter">
+        SERVING THE WORLD'S FIRST SPECIALTY GRADE ROBUSTA BEANS ON THE MARKET.
+        WE ARE INNOVATORS IN THE COFFEE INDUSTRY. WITH COFFEE SHOPS ACROSS THE
+        UK, US AND MIDDLE EAST
+      </p>
+    </section>
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>CUSTOMER CARE</h4>
+          <ul>
+            <li><a href="#">CONTACT US</a></li>
+            <li><a href="#">CALL NOW: 800 227 8437</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>OUR COMPANY</h4>
+          <ul>
+            <li><a href="#">FIND A BOUTIQUE ↗</a></li>
+            <li><a href="#">OUR STORY ↗</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>EXPLORE</h4>
+          <ul>
+            <li><a href="#">SUSCRIPTION</a></li>
+            <li><a href="#">MERCH</a></li>
+            <li><a href="#">ABOUT OUR COFFEE</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>FOLLOW US</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+  <!-- <section class="cart-drawer" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Shopping Cart</h2>
+      <a href="#" id="cartHide">
+        <iconify-icon icon="bitcoin-icons:cross-filled" width="30" height="30"></iconify-icon>
+      </a>
+    </div>
+    <div class="cart-items-container">
+      <img src="img/Hot_Item_Waffel.png" alt="Beans" class="cart-img">
+      <div class="cart-content">
+        <h3 class="cart-product-name">Artisan Glass Pour-Over Decanter</h3>
+        <span class="cart-product-price">$32</span>
+        <div class="cart-quantity-control">
+          <button class="qty-btn minus-btn">&minus;</button>
+          <input type="number" class="qty-input" value="1" min="1">
+          <button class="qty-btn plus-btn">&plus;</button>
+        </div>
+        <a href="#" class="remove-link">Remove</a>
+      </div>
+    </div>
+    <div class="cart-items-container">
+      <img src="img/Hot_Item_Waffel.png" alt="Beans" class="cart-img">
+      <div class="cart-content">
+        <h3 class="cart-product-name">Artisan Glass Pour-Over Decanter</h3>
+        <span class="cart-product-price">$32</span>
+        <div class="cart-quantity-control">
+          <button class="qty-btn minus-btn">&minus;</button>
+          <input type="number" class="qty-input" value="1" min="1">
+          <button class="qty-btn plus-btn">&plus;</button>
+        </div>
+        <a href="#" class="remove-link">Remove</a>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="one">Total:</span>
+        <span>$0.00</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </section>
+  <div class="cart-overlay" id="cart-overlay"></div> -->
+</body>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="js/header.js"></script>
+<script src="js/script.js"></script>
+
 </html>

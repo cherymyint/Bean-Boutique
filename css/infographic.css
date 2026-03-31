@@ -1,0 +1,10 @@
+.infographicSection1 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brewMethodsInfo1, .brewMethodsInfo2 {
+  width: 650px;
+  border-radius: 10px;
+}
