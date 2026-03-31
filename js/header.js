@@ -37,8 +37,8 @@ function loadHeader() {
               <li><a href="brewingEqu.html">Brewing Kits</a></li>
             </ul>
           </li>
-          <li><a href="#">Suscription</a></li>
-          <li><a href="#">Events</a></li>
+          <li><a href="subscription.html">Subscription</a></li>
+          <li><a href="events.html">Events</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
         <ul class="nav2">
@@ -76,6 +76,7 @@ function setupModalLogic() {
     showModalBox.addEventListener("click", function (e) {
       e.preventDefault();
       modalOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
   }
 
@@ -83,6 +84,7 @@ function setupModalLogic() {
     hideModalBox.addEventListener("click", function (e) {
       e.preventDefault();
       modalOverlay.classList.remove("active");
+      document.body.style.overflow = "auto";
     });
   }
 
@@ -96,3 +98,13 @@ function setupModalLogic() {
 }
 
 loadHeader();
+
+function updateCartBadge() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalCount = cart.reduce((total, item) => total + item.qty, 0);
+    const badge = document.getElementById("cart-count");
+    if (badge) {
+        badge.innerText = totalCount;
+        badge.style.display = totalCount > 0 ? "flex" : "none";
+    }
+}

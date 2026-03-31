@@ -3,7 +3,6 @@
     position: fixed;
     right: 0; 
     top: 0;
-    bottom: 0;
     width: 30%;
     background-color: var(--background-color); 
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
@@ -11,9 +10,18 @@
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto; 
     
-    /* Animation အတွက် ဒါကို သုံးမယ် (ပိတ်ထားချင်ရင် အောက်က line ကို သုံးပါ) */
-    /* transform: translateX(100%); transition: 0.3s; */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-drawer::-webkit-scrollbar {
+    width: 6px;
+}
+.cart-drawer::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
 }
 
 .cart-header {
@@ -32,6 +40,7 @@
 }
 .cart-header h2 {
     font-size: 28px;
+    color: var(--primary-color);
     font-family: var(--secondary-font-family);
 }
 
@@ -132,5 +141,60 @@
     transition: .3s ease-in;
 }
 .checkout-btn:hover {
-    background-color: #791c14;
+    background-color: var(--hover-primary-color);
+}
+#cartHide {
+    transition: .3s ease-in;
+    color: var(--primary-color);
+    cursor: pointer;
+} 
+#cartHide:hover {
+    color: var(--hover-primary-color);
+}
+/* ==================== CART OVERLAY ==================== */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.528);
+    z-index: 9998;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-drawer {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-drawer.active {
+    transform: translateX(0);
+}
+.cart-item-prices {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.unit-price {
+    font-size: 13px;
+    color: #666;
+}
+/* .cart-footer {
+    display: none;
+} */
+
+.item-total-price {
+    font-size: 15px;
+    color: var(--primary-color);
+    margin-top: 5px;
 }

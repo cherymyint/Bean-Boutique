@@ -1,0 +1,66 @@
+.eventSectionTitle {
+    font-size: 36px;
+    font-family: var(--secondary-font-family);
+    color: var(--primary-color);
+    padding: 0;
+}
+.eventSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+    height: 100vh;
+}
+.eventsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    column-gap: 40px;
+}
+.eventsCard {
+    max-width: 425px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.eventsCard-title {
+    font-size: 24px;
+    font-family: var(--secondary-font-family);
+    margin-bottom: 20px;
+
+}
+.eventsCard-para {
+    font-size: 16px;
+    color: var(--body-text-color);
+    line-height: 23px;
+}
+.events-img {
+    max-width: 425px;
+    max-height: 200px;
+    object-fit: cover;
+}
+.eventsCardLine {
+    margin: 18px 0;
+}
+.eventsCard-subTitle {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.date-time {
+    margin-bottom: 25px;
+}
+.registerBtn {
+    padding: 10px 30px;
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in;
+}
+.registerBtn:hover {
+    background-color: #555;
+}

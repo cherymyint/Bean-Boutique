@@ -471,7 +471,6 @@ const allProducts = {
 
 let storedProducts = JSON.parse(localStorage.getItem("all_products"));
 
-// 2. တကယ်လို့ မရှိသေးရင် (ပထမဆုံးအကြိမ်ဆိုရင်) မူရင်း data ကို သိမ်းလိုက်မယ်
 if (!storedProducts) {
   localStorage.setItem("all_products", JSON.stringify(allProducts));
   storedProducts = allProducts;
@@ -531,13 +530,21 @@ function renderPageProducts(filterText = "") {
           <div>
             <h3 class="productTitle">${product.name}</h3>
             <p class="productPrice">$${product.price}</p>
-            ${product.flavourNotes ? `
+            ${
+              product.flavourNotes
+                ? `
               <h5 class="flavour-notes-title">Flavour Notes</h5>
               <p class="flavour-notes-content">${product.flavourNotes}</p>
-            ` : ""}
-            ${product.importCountry ? `
+            `
+                : ""
+            }
+            ${
+              product.importCountry
+                ? `
               <span class="productDetailCategory1">${product.importCountry}</span>
-            ` : ""}
+            `
+                : ""
+            }
           </div>
         </a>
     `;
@@ -561,18 +568,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  renderPageProducts(); // Initial Render
+  renderPageProducts();
 });
 
 // ==================== Cart Logic (Global) ====================
 document.addEventListener("click", (e) => {
-  // Plus Button နှိပ်လျှင်
   if (e.target.classList.contains("plus-btn")) {
     const input = e.target.parentElement.querySelector(".qty-input");
     input.value = parseInt(input.value) + 1;
   }
 
-  // Minus Button နှိပ်လျှင်
   if (e.target.classList.contains("minus-btn")) {
     const input = e.target.parentElement.querySelector(".qty-input");
     if (parseInt(input.value) > 1) {
@@ -581,30 +586,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-function addToCart(productId) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  const all = [
-    ...storedProducts.coffee,
-    ...storedProducts.beans,
-    ...storedProducts.equipments,
-    ...storedProducts.snacks,
-  ];
-  const product = all.find((p) => p.id === productId);
-
-  if (product) {
-    const existing = cart.find((item) => item.id === productId);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      cart.push({ ...product, quantity: 1 });
-    }
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${product.name} added to cart!`);
-    updateCartIcon();
-  }
-}
-
 window.onload = () => {
   renderPageProducts();
   if (typeof updateCartIcon === "function") updateCartIcon();
@@ -612,6 +593,10 @@ window.onload = () => {
 
 // ==================== Product Detail Page ====================
 const productNameEl = document.getElementById("product-name");
+const addToCartBtn = document.getElementById("addToCart");
+const quantityInput = document.getElementById("quantity");
+const plusBtn = document.getElementById("plus");
+const minusBtn = document.getElementById("minus");
 
 if (productNameEl) {
   const params = new URLSearchParams(window.location.search);
@@ -623,7 +608,83 @@ if (productNameEl) {
     ...storedProducts.equipments,
     ...storedProducts.snacks,
   ];
+
   const product = all.find((p) => p.id == productId);
+
+  if (product) {
+    let basePrice = product.price;
+
+    const updateTotalPrice = () => {
+      const qty = parseInt(quantityInput.value);
+      const total = qty * basePrice;
+      addToCartBtn.textContent = `Add To Cart - $${total.toFixed(2)}`;
+    };
+
+    updateTotalPrice();
+
+    plusBtn.addEventListener("click", () => {
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updateTotalPrice();
+    });
+
+    minusBtn.addEventListener("click", () => {
+      if (parseInt(quantityInput.value) > 1) {
+        quantityInput.value = parseInt(quantityInput.value) - 1;
+        updateTotalPrice();
+      }
+    });
+
+    addToCartBtn.addEventListener("click", () => {
+      const qty = parseInt(quantityInput.value);
+      saveToLocalStorage(product, qty);
+    });
+  }
+
+  function renderCart() {
+    const wrapper = document.getElementById("cart-items-list-wrapper");
+    const totalEl = document.getElementById("cart-total-price");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (!wrapper) return;
+
+    if (cart.length === 0) {
+      wrapper.innerHTML = `<p style="text-align:center; padding: 20px;">Your cart is empty.</p>`;
+      if (totalEl) totalEl.innerText = "$0.00";
+      return;
+    }
+
+    let html = "";
+    let overallTotal = 0;
+
+    cart.forEach((item, index) => {
+      const itemTotal = item.price * item.qty;
+      overallTotal += itemTotal;
+
+      html += `
+      <div class="cart-items-container">
+        <img src="${item.img}" alt="${item.name}" class="cart-img">
+        <div class="cart-content">
+          <h3 class="cart-product-name">${item.name}</h3>
+          
+          <div class="cart-item-prices">
+            <span class="unit-price">$${item.price} each</span>
+            <strong class="item-total-price">Total: $${itemTotal.toFixed(2)}</strong>
+          </div>
+
+          <div class="cart-quantity-control">
+            <button class="qty-btn" onclick="updateCartQty(${index}, -1)">&minus;</button>
+            <input type="number" class="qty-input" value="${item.qty}" readonly>
+            <button class="qty-btn" onclick="updateCartQty(${index}, 1)">&plus;</button>
+          </div>
+          <a href="#" class="remove-link" onclick="deleteCartItem(${index})">Remove</a>
+        </div>
+      </div>
+    `;
+    });
+
+    wrapper.innerHTML = html;
+    if (totalEl) totalEl.innerText = `$${overallTotal.toFixed(2)}`;
+  }
 
   if (product) {
     document.getElementById("product-name").textContent = product.name;
@@ -676,7 +737,6 @@ if (productNameEl) {
       }
     }
 
-    // Hot Badge
     const hotBadge = document.querySelector(".productDetailHot");
     if (hotBadge) {
       hotBadge.style.display = product.hotItem ? "inline-block" : "none";
@@ -731,37 +791,160 @@ window.addEventListener("scroll", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const cartIconBtn = document.getElementById("cart-icon-btn");
-    const cartSidebar = document.getElementById("cart-sidebar");
-    const closeCartBtn = document.getElementById("close-cart-btn");
-    const cartOverlay = document.getElementById("cart-overlay");
+// ==================== Cart ====================
+function loadHeader() {
+  const commonHTML = `
+  <section class="cart-drawer" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <a href="#" id="cartHide">
+        <iconify-icon icon="bitcoin-icons:cross-filled" width="30" height="30"></iconify-icon>
+      </a>
+    </div>
 
-    // 🔥 Cart ကို ဖွင့်တဲ့ Function
-    function openCart() {
-        cartSidebar.classList.add("open"); // Cart ကို Slide သွင်းမယ်
-        cartOverlay.classList.add("open"); // Overlay ကို ပြမယ်
-        document.body.style.overflow = "hidden"; // Main content ကို Scroll လုပ်လို့မရအောင် ပိတ်မယ်
-    }
+    <div id="cart-items-list-wrapper"></div>
 
-    // 🔥 Cart ကို ပိတ်တဲ့ Function
-    function closeCart() {
-        cartSidebar.classList.remove("open"); // Cart ကို Slide ပြန်ထုတ်မယ်
-        cartOverlay.classList.remove("open"); // Overlay ကို ဖျောက်မယ်
-        document.body.style.overflow = "auto"; // Scroll ပြန်ဖွင့်မယ်
-    }
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-total">
+        <span class="one">SubTotal:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="checkout-btn">Checkout</button>
+    </div>
+  </section>
+  <div class="cart-overlay" id="cart-overlay"></div>
+  `;
 
-    // Event Listeners:
-    if (cartIconBtn) {
-        cartIconBtn.addEventListener("click", openCart);
-    }
-    
-    if (closeCartBtn) {
-        closeCartBtn.addEventListener("click", closeCart);
-    }
+  document.body.insertAdjacentHTML("afterbegin", commonHTML);
 
-    // Overlay (မှောင်နေတဲ့နေရာ) ကို နှိပ်ရင်လည်း Cart ပိတ်အောင်
-    if (cartOverlay) {
-        cartOverlay.addEventListener("click", closeCart);
-    }
-});
+  setupModalLogic();
+  setupCartLogic();
+  updateCartBadge();
+  renderCart();
+}
+
+function renderCart() {
+  const wrapper = document.getElementById("cart-items-list-wrapper");
+  const totalEl = document.getElementById("cart-total-price");
+  const footerEl = document.getElementById("cart-footer");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (!wrapper) return;
+
+  if (cart.length === 0) {
+    wrapper.innerHTML = `<p style="text-align:center; padding: 20px;">Your cart is empty.</p>`;
+    if (totalEl) totalEl.innerText = "$0.00";
+
+    if (footerEl) footerEl.style.display = "none";
+    return;
+  }
+
+  if (footerEl) footerEl.style.display = "block";
+
+  let html = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += Number(item.price) * Number(item.qty);
+
+    html += `
+      <div class="cart-items-container">
+        <img src="${item.img}" alt="${item.name}" class="cart-img">
+        <div class="cart-content">
+          <h3 class="cart-product-name">${item.name}</h3>
+          <div class="cart-price-and-qty">
+            <span class="cart-product-price">$${item.price}</span>
+            <div class="cart-quantity-control">
+              <button class="qty-btn" onclick="updateCartQty(${index}, -1)">&minus;</button>
+              <input type="number" class="qty-input" value="${item.qty}" readonly>
+              <button class="qty-btn" onclick="updateCartQty(${index}, 1)">&plus;</button>
+            </div>
+          </div>
+          <a href="#" class="remove-link" onclick="deleteCartItem(${index})">Remove</a>
+        </div>
+      </div>
+    `;
+  });
+
+  wrapper.innerHTML = html;
+  if (totalEl) totalEl.innerText = `$${total.toFixed(2)}`;
+}
+
+window.updateCartQty = (index, change) => {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  cart[index].qty += change;
+  if (cart[index].qty < 1) cart[index].qty = 1;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+  updateCartBadge();
+};
+
+window.deleteCartItem = (index) => {
+  let cart = JSON.parse(localStorage.getItem("cart"));
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+  updateCartBadge();
+};
+
+function saveToLocalStorage(product, qty) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingIndex = cart.findIndex((item) => item.id === product.id);
+
+  if (existingIndex > -1) {
+    cart[existingIndex].qty += qty;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      img: product.img,
+      qty: qty,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  if (typeof updateCartBadge === "function") updateCartBadge();
+
+  renderCart();
+
+  const cartSidebar = document.getElementById("cart-sidebar");
+  const cartOverlay = document.getElementById("cart-overlay");
+  if (cartSidebar && cartOverlay) {
+    cartSidebar.classList.add("active");
+    cartOverlay.classList.add("active");
+  }
+}
+
+function setupCartLogic() {
+  const cartIconBtn = document.getElementById("cart-icon-btn");
+  const cartSidebar = document.getElementById("cart-sidebar");
+  const cartHideBtn = document.getElementById("cartHide");
+  const cartOverlay = document.getElementById("cart-overlay");
+
+  if (cartIconBtn) {
+    cartIconBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      cartSidebar.classList.add("active");
+      cartOverlay.classList.add("active");
+    });
+  }
+
+  if (cartHideBtn) {
+    cartHideBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      cartSidebar.classList.remove("active");
+      cartOverlay.classList.remove("active");
+    });
+  }
+
+  if (cartOverlay) {
+    cartOverlay.addEventListener("click", () => {
+      cartSidebar.classList.remove("active");
+      cartOverlay.classList.remove("active");
+    });
+  }
+}
+
+loadHeader();

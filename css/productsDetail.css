@@ -139,7 +139,7 @@
 .flavourNotesContentDetail {
     line-height: 1.6;
     font-size: 16px;
-    color: #555;
+    color: var(--body-text-color);
 }
 .brewingMethodsDiv {
     margin-bottom: 25px;

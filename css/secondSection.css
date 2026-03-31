@@ -135,13 +135,12 @@
     transform: translateX(90px) rotate(18deg);
 }
 .letter-animate span {
-  display: inline-block; /* စာသားတွေ ပုံမပျက်စေရန် */
+  display: inline-block; 
   opacity: 0;
   transform: translateY(20px);
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Show class တက်လာရင် animation စမယ် */
 .letter-animate.show span {
   animation: letterUp 0.5s ease forwards;
 }

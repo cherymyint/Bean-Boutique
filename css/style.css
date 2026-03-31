@@ -8,10 +8,15 @@
 @import url(footer.css);
 @import url(infographic.css);
 @import url(cart.css);
+@import url(subscription.css);
+@import url(events.css);
+@import url(registerForm.css);
 
 :root {
     --primary-color: #400801; 
     --primary2-color: #4e0a00d5; 
+    --body-text-color: #555;
+    --hover-primary-color: #791c14;
     --secondary-color: #C9A66B; 
     --darkbrown-color: #392311;
     --accent-color: #F4E1D2;
