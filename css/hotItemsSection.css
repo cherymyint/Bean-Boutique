@@ -38,12 +38,3 @@
 .hotItemImg {
     width: 400px;
 }
-.hotItemsFooter {
-    font-size: 28px;
-    color: var(--primary-color);
-    font-family: var(--secondary-font-family);
-    line-height: 25px;
-    text-align: center;
-    margin-top: 100px;
-    line-height: 50px;
-}

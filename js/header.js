@@ -39,7 +39,7 @@ function loadHeader() {
           </li>
           <li><a href="subscription.html">Subscription</a></li>
           <li><a href="events.html">Events</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <ul class="nav2">
           <li>

@@ -1,10 +1,40 @@
 .infographicSection1 {
-  height: 100vh;
+  min-height: 100vh; 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
-.brewMethodsInfo1, .brewMethodsInfo2 {
-  width: 650px;
+
+.brewMethodsInfo1, 
+.brewMethodsInfo2 {
+  width: 600px; 
+  height: auto;
   border-radius: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1100px) {
+  .infographicSection1 {
+    gap: 20px;
+  }
+  
+  .brewMethodsInfo1, 
+  .brewMethodsInfo2 {
+    width: 450px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .infographicSection1 {
+    flex-direction: column;
+    height: auto; 
+    gap: 30px;
+  }
+
+  .brewMethodsInfo1, 
+  .brewMethodsInfo2 {
+    width: 100%; 
+    max-width: 500px; 
+  }
 }
