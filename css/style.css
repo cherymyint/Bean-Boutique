@@ -11,6 +11,7 @@
 @import url(subscription.css);
 @import url(events.css);
 @import url(registerForm.css);
+@import url(contact.css);
 
 :root {
     --primary-color: #400801; 
