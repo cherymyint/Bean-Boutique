@@ -1,19 +1,24 @@
 .secondSection {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 30px;
     height: 100vh;
 }
+
 .threeMenu a {
     text-decoration: none;
     cursor: pointer;
 }
+
 .coffeeShow {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
+
 .coffeeShow h2 {
     font-size: 24px;
     color: var(--primary-color);
@@ -25,6 +30,7 @@
 .coffeeShowImg:hover {
     transform: scale(1.03);
 }
+
 .coffeeFix {
     width: 100%;
     height: 380px;
@@ -35,21 +41,25 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .coffeeFixContent {
     display: flex;
     flex-direction: column;
     gap: 20px;
     max-width: 500px;
 }
+
 .coffeeFixImg {
     min-width: 500px;
     position: relative;
 }
+
 .coffeeFixImg {
     width: 80px;
     height: 280px;
     object-fit: cover;
 }
+
 .coffeeFixImg.one {
     position: absolute;
     transform: translate(45%, 0);
@@ -57,6 +67,7 @@
     left: 0;
     animation: slideIn 1s ease-out forwards;
 }
+
 .getCoffeeFixTitle {
     font-size: 36px;
     color: var(--primary-color);
@@ -65,12 +76,14 @@
     margin: 0;
     padding: 0;
 }
+
 .getCoffeeFixPara {
     font-size: 16px;
     color: var(--primary-color);
     font-family: var(--primary-font-family);
     line-height: 25px;
 }
+
 .getCoffeeFixBtn {
     width: fit-content;
     display: flex;
@@ -87,66 +100,157 @@
     font-size: 16px;
     transition: 0.3s ease-in-out;
 }
+
 .coffeeFixImg {
     position: relative;
 }
+
 .coffeeBag {
     position: absolute;
     width: 450px;
     transition: all 0.6s ease;
-    transform-origin: bottom center; 
+    transform-origin: bottom center;
 }
+
 .bag1 {
     z-index: 3;
     transform: translateX(-5px) rotate(18deg);
 }
+
 .bag2 {
     z-index: 2;
     transform: translateX(25px) rotate(0deg);
 }
+
 .bag3 {
     z-index: 1;
     transform: translateX(60px) rotate(-18deg);
 }
+
 .coffeeFix:hover .bag1 {
     transform: translateX(-20px) rotate(-18deg);
 }
+
 .coffeeFix:hover .bag2 {
     transform: translateX(40px) rotate(0deg);
 }
+
 .coffeeFix:hover .bag3 {
     transform: translateX(90px) rotate(18deg);
 }
+
 .letter-animate span {
-  display: inline-block; 
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
 }
 
 .letter-animate.show span {
-  animation: letterUp 0.5s ease forwards;
+    animation: letterUp 0.5s ease forwards;
 }
 
 @keyframes letterUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .threeMenu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     justify-items: center;
 }
 
 .coffeeShowImg {
     width: 100%;
-    /* max-width: 400px;  */
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
+}
+@media (max-width: 1225px) {
+    .secondSection {
+        height: auto;
+    }
+    .threeMenu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1045px) {
+    .coffeeFixContent {
+        align-items: center;
+    }
+
+    .coffeeFix {
+        height: auto;
+        flex-direction: column-reverse;
+    }
+
+    .getCoffeeFixPara {
+        text-align: center;
+    }
+}
+
+@media (max-width: 769px) {
+    .threeMenu {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .coffeeShowImg {
+        max-width: 400px;
+    }
+
+    .coffeeFix {
+        width: 100%;
+        max-width: 400px;
+        overflow: hidden;
+    }
+
+    .getCoffeeFixTitle {
+        font-size: 32px;
+    }
+
+    .coffeeBag {
+        width: 400px;
+    }
+
+    .bag1 {
+        transform: translateX(10px) rotate(18deg);
+    }
+
+    .bag2 {
+        transform: translateX(50px) rotate(0deg);
+    }
+
+    .bag3 {
+        transform: translateX(80px) rotate(-19deg);
+    }
+
+    .coffeeFix:hover .bag1 {
+        transform: translateX(35px) rotate(-18deg);
+    }
+
+    .coffeeFix:hover .bag2 {
+        transform: translateX(50px) rotate(0deg);
+    }
+
+    .coffeeFix:hover .bag3 {
+        transform: translateX(70px) rotate(18deg);
+    }
+}
+
+@media (max-width: 551px) {
+    .coffeeShowImg {
+        max-width: 350px;
+    }
+
+    .getCoffeeFixTitle {
+        font-size: 32px;
+    }
 }
