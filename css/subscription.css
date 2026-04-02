@@ -1,4 +1,144 @@
-.subscriptionSection {
+.sub-cards {
     height: 100vh;
-    padding-top: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.sub-img {
+    max-width: 350px;
+}
+.sub-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.sub-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+    color: var(--primary-color);
+}
+.sub-card h3 {
+    margin: 10px 0;
+}
+.sub-card p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+.sub-cards1 {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 50px;
+}
+.sub-card1 {
+    background: var(--silver-linear);
+}
+.sub-card2 {
+    background: var(--gold-linear);
+}
+.sub-card3 {
+    background: var(--diamond-linear);
+}
+.sub-card1 h2, .sub-card2 h2, .sub-card3 h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.sub-card1 h1, .sub-card2 h1, .sub-card3 h1 {
+    font-size: 36px;
+}
+.sub-card1 span, .sub-card2 span, .sub-card3 span {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.sub-card1 ul, .sub-card2 ul, .sub-card3 ul {
+    margin-top: 20px;
+}
+.sub-card1 ul li, .sub-card2 ul li, .sub-card3 ul li {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+.sub-card1, .sub-card2, .sub-card3 {
+    padding: 20px 25px;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 500px;
+    max-width: 300px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.sub-card1 button, 
+.sub-card2 button, 
+.sub-card3 button {
+    padding: 10px 30px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: auto;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sub-card1 button {
+    background: #ffffff;
+    color: #555;
+}
+
+.sub-card1 button:hover {
+    transform: scale(1.05);
+}
+
+.sub-card2 button {
+    background: #fff;
+    color: #b88900;
+}
+
+.sub-card2 button:hover {
+    transform: scale(1.05);
+}
+
+.sub-card3 button {
+    background: #fff;
+    color: #0077b6;
+}
+
+.sub-card3 button:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 1235px) {
+    .subscriptionSection {
+        padding-bottom: 50px;
+    }
+    .sub-cards {
+        height: auto;
+        padding-top: 130px;
+    }
+    .sub-icons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sub-cards1 {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+@media (max-width: 736px) {
+    .sub-icons {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .sub-cards1 {
+        grid-template-columns: repeat(1, auto);
+    }
 }

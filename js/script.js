@@ -255,7 +255,7 @@ const allProducts = {
       name: "Professional Drip Coffee Maker",
       description:
         "Designed for coffee lovers who value consistency and convenience. This brewer ensures the optimal water temperature and shower-head distribution to extract the full flavor profile of your favorite Bean Boutique roasts.",
-      price: 70,
+      price: 165,
       usage:
         "Fill the reservoir with fresh water, place a paper filter in the basket, and add medium-ground coffee. Press the switch, and enjoy a perfect pot of gold-standard coffee in minutes.",
       category: "Brewing Equipment",
@@ -268,7 +268,7 @@ const allProducts = {
       name: "Professional Drip Coffee Maker",
       description:
         "Designed for coffee lovers who value consistency and convenience. This brewer ensures the optimal water temperature and shower-head distribution to extract the full flavor profile of your favorite Bean Boutique roasts.",
-      price: 85.6,
+      price: 200,
       usage:
         "Fill the reservoir with fresh water, place a paper filter in the basket, and add medium-ground coffee. Press the switch, and enjoy a perfect pot of gold-standard coffee in minutes.",
       category: "Brewing Equipment",
@@ -281,7 +281,7 @@ const allProducts = {
       name: "Artisan Glass Pour-Over Decanter",
       description:
         "Experience the ritual of slow coffee. Featuring a heat-resistant glass body and an elegant wooden collar, this brewer produces a clean, bright cup that highlights the delicate floral and fruity notes of your beans.",
-      price: 25,
+      price: 125,
       usage:
         "Place a filter in the top and add coffee grounds. Slowly pour hot water in a circular motion, allowing the coffee to bloom before finishing the pour. The coffee drips directly into the elegant carafe.",
       category: "Brewing Equipment",
@@ -294,7 +294,7 @@ const allProducts = {
       name: "Vintage Wood-Style Moka Pot",
       description:
         "For those who crave the intensity of an espresso-style brew at home. This classic stovetop maker features a unique wood-grain finish, blending traditional Italian brewing with a rustic, modern aesthetic.",
-      price: 18,
+      price: 49.7,
       usage:
         "Fill the bottom chamber with water and the filter basket with fine-ground coffee. Assemble the unit and heat on a stovetop. As the water boils, pressure forces the rich, concentrated coffee into the upper chamber.",
       category: "Brewing Equipment",
@@ -307,7 +307,7 @@ const allProducts = {
       name: "Artisan Glass Pour-Over Decanter",
       description:
         "Experience the ritual of slow coffee. Featuring a heat-resistant glass body and an elegant wooden collar, this brewer produces a clean, bright cup that highlights the delicate floral and fruity notes of your beans.",
-      price: 23,
+      price: 80,
       usage:
         "Place a filter in the top and add coffee grounds. Slowly pour hot water in a circular motion, allowing the coffee to bloom before finishing the pour. The coffee drips directly into the elegant carafe.",
       category: "Brewing Equipment",
@@ -320,7 +320,7 @@ const allProducts = {
       name: "AeroPress Go Travel Brewer",
       description:
         "The ultimate tool for the adventurous coffee drinker. Rapid, total-immersion brewing creates smooth, rich coffee without bitterness. It’s lightweight, durable, and perfect for the office or the great outdoors.",
-      price: 28,
+      price: 65,
       usage:
         "Add coffee and hot water to the chamber, stir for 10 seconds, then gently press the plunger down. The air pressure pushes the coffee through the micro-filter directly into your mug.",
       category: "Brewing Equipment",
@@ -333,7 +333,7 @@ const allProducts = {
       name: "Breville Smart Drip Station",
       description:
         "High-tech meets high-flavor. This smart brewer features a digital display to customize brew time and temperature. Includes a Keep Warm function to ensure your second cup is as hot and fresh as the first.",
-      price: 28,
+      price: 55,
       usage:
         "Select your preferred brewing mode on the digital interface. The machine automatically adjusts the flow rate and contact time to match your specific coffee type.",
       category: "Brewing Equipment",
@@ -343,10 +343,10 @@ const allProducts = {
     },
     {
       id: 36,
-      name: "The Royal Brewer(1918)",
+      name: "The Royal Brewer",
       description:
         "A luxury 19th-century style coffee maker that uses gravity and vacuum pressure to brew a premium, sediment-free cup of coffee. It’s a perfect blend of science and art.",
-      price: 199,
+      price: 250,
       usage:
         "Select your preferred brewing mode on the digital interface. The machine automatically adjusts the flow rate and contact time to match your specific coffee type.",
       category: "Brewing Equipment",
@@ -503,7 +503,6 @@ function renderPageProducts(filterText = "") {
     ];
   }
 
-  // --- Search Filtering Logic ---
   if (filterText) {
     const searchLow = filterText.toLowerCase();
 
@@ -567,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
+  renderWishlist();
   renderPageProducts();
 });
 
@@ -742,7 +741,105 @@ if (productNameEl) {
       hotBadge.style.display = product.hotItem ? "inline-block" : "none";
     }
   }
+  const wishlistBtn = document.getElementById("addToWishlist");
+
+  if (wishlistBtn && product) {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const icon = wishlistBtn.querySelector("iconify-icon");
+
+    if (wishlist.find((item) => item.id === product.id)) {
+      icon.setAttribute("icon", "ph:heart-fill");
+      icon.style.color = "red";
+    }
+
+    wishlistBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+      const exists = wishlist.find((item) => item.id === product.id);
+
+      if (exists) {
+        wishlist = wishlist.filter((item) => item.id !== product.id);
+        icon.setAttribute("icon", "ph:heart-light");
+        icon.style.color = "";
+      } else {
+        wishlist.push({
+          id: product.id,
+          name: product.name,
+          description: product.description,
+          price: product.price,
+          img: product.img,
+          flavourNotes: product.flavourNotes,
+          category: product.category,
+          hotItem: product.hotItem,
+          importCountry: product.importCountry
+        });
+
+        icon.setAttribute("icon", "ph:heart-fill");
+        icon.style.color = "red";
+      }
+
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    });
+  }
 }
+function renderWishlist() {
+  const container = document.getElementById("wish-grid-container");
+  if (!container) return;
+
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  if (wishlist.length === 0) {
+    container.innerHTML = `
+      <p class="emptyWish">
+        Your wishlist is empty 💔
+      </p>
+    `;
+    return;
+  }
+
+  container.innerHTML = "";
+
+  wishlist.forEach((item, index) => {
+    container.innerHTML += `
+    <div class="wishCard">
+      <a href="productDetail.html?id=${item.id}" class="productCard">
+      <img src="${item.img}" alt="${item.name}" class="productImg" />
+      ${item.hotItem ? '<span class="hot">🔥 Hot Item</span>' : ""}
+      <div>
+        <h3 class="productTitle">${item.name}</h3>
+        <p class="productPrice">$${item.price}</p>
+        ${
+          item.flavourNotes
+            ? `
+              <h5 class="flavour-notes-title">Flavour Notes</h5>
+              <p class="flavour-notes-content">${item.flavourNotes}</p>
+            `
+            : ""
+        }
+        ${
+          item.importCountry
+            ? `<span class="productDetailCategory1">${item.importCountry}</span>`
+            : ""
+        }
+      </div>
+    </a>
+    <span class="removeWishBtn" onclick="removeFromWishlist()">Remove</span>
+    </div>
+
+    `;
+  });
+}
+window.removeFromWishlist = function (index) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  wishlist.splice(index, 1);
+
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+  renderWishlist(); // re-render 🔥
+};
 
 // ==================== General ====================
 const letterTitles = document.querySelectorAll(".letter-animate");
@@ -782,7 +879,7 @@ const discountBar = document.getElementById("first-time-discount");
 
 window.addEventListener("scroll", () => {
   const discountHeight = discountBar.offsetHeight;
-  const triggerPoint = discountHeight * 0.3; // 10%
+  const triggerPoint = discountHeight * 0.3;
 
   if (window.scrollY > triggerPoint) {
     navbar.classList.add("scrolled");
@@ -948,3 +1045,48 @@ function setupCartLogic() {
 }
 
 loadHeader();
+
+const images = document.querySelectorAll(
+  ".brewMethodsInfo1, .brewMethodsInfo2",
+);
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close-btn");
+
+images.forEach((img) => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    document.body.style.overflow = "hidden";
+  });
+});
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});
+
+const scrollBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const vh150 = window.innerHeight * 1;
+  if (scrollPosition > vh150) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});

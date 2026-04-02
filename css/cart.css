@@ -198,3 +198,18 @@
     color: var(--primary-color);
     margin-top: 5px;
 }
+@media (max-width: 1025px)  {
+    .cart-drawer {
+        width: 50%;
+    }
+}
+@media (max-width: 769px)  {
+    .cart-drawer {
+        width: 60%;
+    }
+}
+@media (max-width: 589px)  {
+    .cart-drawer {
+        width: 100%;
+    }
+}

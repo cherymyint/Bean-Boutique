@@ -21,73 +21,46 @@
 
   <body>
     <main>
-      <section class="contact-section container" id="contact">
-        <h1
-          class="contact-title"
-          data-aos="zoom-in"
-          data-aos-duration="3000"
-          data-aos-easing="linear"
-        >
-          Coffee Cupping & Tasting Event Registartion Form
-        </h1>
-        <form action="#" class="contact-form">
-          <div class="form-1">
-            <div class="input-box">
-              <input type="text" class="full-name" required />
-              <span
-                class="full-name-span"
-                data-aos="flip-right"
-                data-aos-duration="4000"
-                data-aos-easing="linear"
-                >First Name</span
-              >
+
+    <section class="conatct-section container">
+      <h3 class="contact-section-title">Cupping & Tasting Registration Form</h3>
+      <div class="conatct-content">
+        <form action="contact" class="contact">
+          <div class="first-input-contact">
+            <div class="contact-name-div">
+              <label for="firstName">First Name</label>
+              <input type="text" class="contact-name" />
             </div>
-            <div class="input-box">
-              <input type="text" class="lastName" required />
-              <span
-                class="email-span"
-                data-aos="flip-right"
-                data-aos-duration="4000"
-                data-aos-easing="linear"
-                >Last Name</span
-              >
+            <div class="contact-name-div">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="contact-name" />
             </div>
           </div>
-          <div class="form-2">
-            <div class="input-box">
-              <input type="text" class="no" required />
-              <span
-                class="no-span"
-                data-aos="flip-right"
-                data-aos-duration="4000"
-                data-aos-easing="linear"
-                >Email</span
-              >
-            </div>
-            <div class="input-box">
-              <input type="text" class="address" required />
-              <span
-                class="address-span"
-                data-aos="flip-right"
-                data-aos-duration="4000"
-                data-aos-easing="linear"
-                >Address</span
-              >
-            </div>
+          <div class="contact-name-div">
+            <label for="name">Email</label>
+            <input type="text" class="email-name" />
           </div>
-          <div class="des-gp">
-            <textarea name="des" class="des" required></textarea>
-            <span
-              class="des-span"
-              data-aos="flip-right"
-              data-aos-duration="4000"
-              data-aos-easing="linear"
-              >Notes</span
-            >
+          <div class="contact-name-div">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="email-name" />
           </div>
-          <button class="contact-form-sumit">Submit</button>
+          <div class="contact-name-div">
+            <label for="notes">Your Notes</label>
+            <textarea class="message"></textarea>
+          </div>
+        <div class="captcha-container">
+          <input type="checkbox" id="not-a-robot" />
+          <label for="not-a-robot">I'm not a robot</label>
+          <iconify-icon
+            icon="logos:recaptcha"
+            width="34.56"
+            height="32"
+          ></iconify-icon>
+        </div>
+          <button class="contactBtn">Submit</button>
         </form>
-      </section>
+      </div>
+    </section>
       <footer class="main-footer">
         <div class="footer-container">
           <div class="footer-col">

@@ -150,3 +150,51 @@
 #desDiv {
     margin-top: 20px;
 }
+@media (max-width: 1157px) {
+    .productDetailSection {
+        padding: 80px 0 0 0;
+    }
+    .productDetail {
+        gap: 50px;
+    }
+    .productDetailImg {
+    width: 350px;
+    }
+}
+@media (max-width: 891px) {
+    .productDetailSection {
+        height: auto;
+        padding: 130px 0;
+    }
+    .productDetail {
+        flex-direction: column;
+    }
+    .productDetailImg {
+        width: 300px;
+    }
+    .productDetailDescription {
+        text-align: justify;
+    }
+}
+@media (max-width: 541px) {
+    .productDetail {
+        gap: 0;
+    }
+    .productDetailImg {
+        width: 290px;
+    }
+    .productDetailContent {
+        max-width: 350px;
+    }
+}
+@media (max-width: 384px) {
+    .productDetailImg {
+        width: 270px;
+    }
+    .productDetailContent {
+        max-width: 300px;
+    }
+    .brewingMethodsImg {
+        width: 300px;
+    }
+}
