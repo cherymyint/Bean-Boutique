@@ -1,10 +1,11 @@
 .sub-cards {
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 50px;
+    padding: 130px 0 100px 0;
 }
 .sub-img {
     max-width: 350px;
@@ -125,7 +126,7 @@
     }
     .sub-cards {
         height: auto;
-        padding-top: 130px;
+        padding: 130px 0 0 0;
     }
     .sub-icons {
         grid-template-columns: repeat(2, 1fr);
