@@ -100,7 +100,6 @@
     background: transparent;
     border-radius: 8px;
     border: 1px solid var(--primary-color);
-    scroll-behavior: none;
 }
 .quantity-selector input::-webkit-outer-spin-button,
 .quantity-selector input::-webkit-inner-spin-button {
@@ -110,6 +109,9 @@
 
 .quantity-selector input[type=number] {
     -moz-appearance: textfield;
+}
+#addToWishlist {
+    color: var(--primary-color);
 }
 
 #addToCart {

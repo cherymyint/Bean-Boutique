@@ -639,52 +639,6 @@ if (productNameEl) {
     });
   }
 
-  function renderCart() {
-    const wrapper = document.getElementById("cart-items-list-wrapper");
-    const totalEl = document.getElementById("cart-total-price");
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (!wrapper) return;
-
-    if (cart.length === 0) {
-      wrapper.innerHTML = `<p style="text-align:center; padding: 20px;">Your cart is empty.</p>`;
-      if (totalEl) totalEl.innerText = "$0.00";
-      return;
-    }
-
-    let html = "";
-    let overallTotal = 0;
-
-    cart.forEach((item, index) => {
-      const itemTotal = item.price * item.qty;
-      overallTotal += itemTotal;
-
-      html += `
-      <div class="cart-items-container">
-        <img src="${item.img}" alt="${item.name}" class="cart-img">
-        <div class="cart-content">
-          <h3 class="cart-product-name">${item.name}</h3>
-          
-          <div class="cart-item-prices">
-            <span class="unit-price">$${item.price} each</span>
-            <strong class="item-total-price">Total: $${itemTotal.toFixed(2)}</strong>
-          </div>
-
-          <div class="cart-quantity-control">
-            <button class="qty-btn" onclick="updateCartQty(${index}, -1)">&minus;</button>
-            <input type="number" class="qty-input" value="${item.qty}" readonly>
-            <button class="qty-btn" onclick="updateCartQty(${index}, 1)">&plus;</button>
-          </div>
-          <a href="#" class="remove-link" onclick="deleteCartItem(${index})">Remove</a>
-        </div>
-      </div>
-    `;
-    });
-
-    wrapper.innerHTML = html;
-    if (totalEl) totalEl.innerText = `$${overallTotal.toFixed(2)}`;
-  }
-
   if (product) {
     document.getElementById("product-name").textContent = product.name;
     document.getElementById("product-img").src = product.img;
