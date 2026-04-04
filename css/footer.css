@@ -21,7 +21,7 @@
     margin-bottom: 30px;
 }
 
-.footer-col h4 {
+.footer-col h4, h3, h2 {
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1.5px;
@@ -36,6 +36,10 @@
 
 .footer-col ul li {
     margin-bottom: 15px;
+    color: #bbbbbb; 
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 .footer-col ul li a {

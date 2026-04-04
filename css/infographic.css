@@ -1,8 +1,25 @@
 .infographicSection1 {
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.infoImg-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 30px;
+}
+.section-title-brew {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  font-family: var(--secondary-font-family);
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .brewMethodsInfo1,
@@ -19,6 +36,13 @@
 .brewMethodsInfo2:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}.section-title {
+  width: 100%; /* Title ကို တစ်ကြောင်းလုံး နေရာယူစေဖို့ */
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333; /* သင့် website theme အတိုင်း အရောင်ပြောင်းနိုင်ပါတယ် */
+  font-weight: bold;
 }
 @media (max-width: 1408px) {
   .brewMethodsInfo1,
@@ -42,7 +66,7 @@
   }
 }
 @media (max-width: 769px) {
-  .infographicSection1 {
+  .infoImg-wrap {
     flex-direction: column;
     justify-content: center;
     gap: 30px;
@@ -58,6 +82,12 @@
   .brewMethodsInfo1,
   .brewMethodsInfo2 {
     width: 350px;
+  }
+}
+@media (max-width: 376px) {
+  .brewMethodsInfo1,
+  .brewMethodsInfo2 {
+    width: 300px;
   }
 }
 .image-modal {
