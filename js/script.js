@@ -41,7 +41,7 @@ const allProducts = {
       id: 1,
       name: "Ice Coffee Set",
       description:
-        "Experience the art of the perfect pour. At Bean Boutique, our Fine Roastery Selection uses premium beans and expert brewing to hit different. From velvety lattes to refreshing fruit infusions, every handcrafted cup is a masterpiece of flavor and aesthetic.",
+        "Premium iced coffee set with smooth texture, and refreshing taste. Experience the art of the perfect pour. At Bean Boutique, our Fine Roastery Selection uses premium beans and expert brewing to hit different. From velvety lattes to refreshing fruit infusions, every handcrafted cup is a masterpiece of flavor and aesthetic.",
       price: 25,
       category: "Iced Coffee",
       hotItem: true,
@@ -52,7 +52,7 @@ const allProducts = {
       id: 2,
       name: "Hot Coffee Set",
       description:
-        "Experience the art of the perfect pour. At Bean Boutique, our Fine Roastery Selection uses premium beans and expert brewing to hit different. From velvety lattes to refreshing fruit infusions, every handcrafted cup is a masterpiece of flavor and aesthetic.",
+        "Rich and aromatic hot coffee set with bold flavor, and smooth finish. Experience the art of the perfect pour. At Bean Boutique, our Fine Roastery Selection uses premium beans and expert brewing to hit different. From velvety lattes to refreshing fruit infusions, every handcrafted cup is a masterpiece of flavor and aesthetic.",
       flavourNotes: "Dark Chocolate, and Hazelnut",
       price: 25,
       category: "Hot Coffee",
@@ -64,7 +64,7 @@ const allProducts = {
       id: 3,
       name: "Ethiopia Sidamo",
       description:
-        "Sip sustainably. Our Earth Blend features organic beans harvested with care. Experience a clean, balanced flavor profile that supports the planet. Handcrafted for a fresh, feel-good brew every time.",
+        "Bright fruity coffee with blueberry notes clean body and smooth finish. Sip sustainably. Our Earth Blend features organic beans harvested with care. Experience a clean, balanced flavor profile that supports the planet. Handcrafted for a fresh, feel-good brew every time.",
       flavourNotes: "Bright blueberry",
       price: 5,
       category: "Hot Coffee",
@@ -75,7 +75,7 @@ const allProducts = {
       id: 4,
       name: "Organic Harvest",
       description:
-        "Sip sustainably. Our Earth Blend features organic beans harvested with care. Experience a clean, balanced flavor profile that supports the planet. Handcrafted for a fresh, feel-good brew every time.",
+        "Organic coffee with earthy flavor and balanced smooth taste. Sip sustainably. Our Earth Blend features organic beans harvested with care. Experience a clean, balanced flavor profile that supports the planet. Handcrafted for a fresh, feel-good brew every time.",
       flavourNotes: "Dark cocoa and earthy cedarwood",
       price: 5,
       category: "Hot Coffee",
@@ -86,7 +86,7 @@ const allProducts = {
       id: 5,
       name: "Single Origin",
       description:
-        "Your classic pour. Bean Boutique Single Origin offers a clean, versatile base that hits right. Crafted with precision for velvety smoothness, it's the ultimate premium staple.",
+        "Smooth coffee with light sweetness and clean balanced flavor. Your classic pour. Bean Boutique Single Origin offers a clean, versatile base that hits right. Crafted with precision for velvety smoothness, it's the ultimate premium staple.",
       flavourNotes: "A hint of vanilla.",
       price: 5,
       category: "Hot Coffee",
@@ -97,7 +97,7 @@ const allProducts = {
       id: 6,
       name: "Sumatra Bold",
       description:
-        "Bold flavor, deep roots. Our Sumatra Bold, Earth Blend, delivers an intense, earthy and smoky kick. Single-origin craftsmanship, handcrafted to perfection. Unleash a powerful coffee experience.",
+        "Bold coffee with smoky flavor and strong full body. Bold flavor, deep roots. Our Sumatra Bold, Earth Blend, delivers an intense, earthy and smoky kick. Single-origin craftsmanship, handcrafted to perfection. Unleash a powerful coffee experience.",
       flavourNotes: "Ripe stone fruit",
       price: 5,
       category: "Hot Coffee",
@@ -108,7 +108,7 @@ const allProducts = {
       id: 7,
       name: "Royal Sumatra Bold ",
       description:
-        "Exotic meets robust. Experience Sumatra Bold in its most vibrant form. This single-origin collective roasters' selection offers powerful flavor and craftsmanship. A daringly handcrafted choice.",
+        "Rich coffee with chocolate notes and smooth creamy texture. Exotic meets robust. Experience Sumatra Bold in its most vibrant form. This single-origin collective roasters' selection offers powerful flavor and craftsmanship. A daringly handcrafted choice.",
       flavourNotes: "Creamy milk chocolate",
       price: 5,
       category: "Hot Coffee",
@@ -119,7 +119,7 @@ const allProducts = {
       id: 8,
       name: "Chocolate Coffee",
       description:
-        "Indulge in the ultimate comfort cup where premium espresso meets the velvety richness of artisanal chocolate. Topped with delicate chocolate curls, this drink is a dream for those who love their coffee with a decadent, dessert-like finish. It’s more than just a drink; it’s a cocoa-infused escape.",
+        "Espresso with rich chocolate, sweet creamy indulgent flavor. Indulge in the ultimate comfort cup where premium espresso meets the velvety richness of artisanal chocolate. Topped with delicate chocolate curls, this drink is a dream for those who love their coffee with a decadent, dessert-like finish. It’s more than just a drink; it’s a cocoa-infused escape.",
       flavourNotes: "Rich Belgian Chocolate",
       price: 5,
       category: "Hot Coffee",
@@ -130,7 +130,7 @@ const allProducts = {
       id: 9,
       name: "Classic Latte",
       description:
-        "The gold standard of coffee craftsmanship. Our Classic Latte features a smooth, full-bodied espresso base balanced with silky, micro-foamed milk. Crowned with elegant latte art, it offers a creamy texture and a gentle caffeine kick that makes it the perfect companion for any time of the day.",
+        "Smooth espresso with creamy milk and soft balanced taste. The gold standard of coffee craftsmanship. Our Classic Latte features a smooth, full-bodied espresso base balanced with silky, micro-foamed milk. Crowned with elegant latte art, it offers a creamy texture and a gentle caffeine kick that makes it the perfect companion for any time of the day.",
       flavourNotes: "Creamy Vanilla Undertones",
       price: 6,
       category: "Hot Coffee",
@@ -141,7 +141,7 @@ const allProducts = {
       id: 10,
       name: "Signature Americano",
       description:
-        "The pure essence of our premium roast. Our Signature Americano is crafted by diluting two shots of our finest espresso with hot water, preserving the bold coffee flavor while mellowing out the intensity. It’s clean, crisp, and perfect for those who appreciate the true character of the bean without any distractions.",
+        "Bold clean coffee with smooth finish and rich aroma.The pure essence of our premium roast. Our Signature Americano is crafted by diluting two shots of our finest espresso with hot water, preserving the bold coffee flavor while mellowing out the intensity. It’s clean, crisp, and perfect for those who appreciate the true character of the bean without any distractions.",
       flavourNotes: "Roasted Nuts",
       price: 6,
       category: "Hot Coffee",
@@ -154,7 +154,7 @@ const allProducts = {
       id: 11,
       name: "Blue Volcano Beans",
       description:
-        "Sourced specifically for Black Sheep Coffee our house espresso is a single origin specialty Robusta coffee from the mineral rich soils in Karnataka. With double the caffeine, richer crema and lower acidity compared to its Arabica cousin it features notes of hazelnut and dark chocolate. Perfect as an espresso and full-bodied so it punches through the milk.",
+        "Strong beans with high caffeine and rich chocolate notes. Sourced specifically for Black Sheep Coffee our house espresso is a single origin specialty Robusta coffee from the mineral rich soils in Karnataka. With double the caffeine, richer crema and lower acidity compared to its Arabica cousin it features notes of hazelnut and dark chocolate. Perfect as an espresso and full-bodied so it punches through the milk.",
       flavourNotes: "Creamy milk chocolate",
       brewingMethods: "img/BrewingMethods.webp",
       price: 30,
@@ -166,7 +166,7 @@ const allProducts = {
       id: 12,
       name: "Crimson Cladera Beans",
       description:
-        "This vibrant and fruit-forward coffee is sourced from the high-altitude regions of East Africa, where traditional farming methods have been passed down for generations. Grown at elevations between 1,400 – 2,000 MASL, the cooler climate and diverse landscapes contribute to a complex and refined flavour profile.",
+        "Fruity beans with vibrant flavor and complex taste profile. This vibrant and fruit-forward coffee is sourced from the high-altitude regions of East Africa, where traditional farming methods have been passed down for generations. Grown at elevations between 1,400 – 2,000 MASL, the cooler climate and diverse landscapes contribute to a complex and refined flavour profile.",
       flavourNotes: "Dark cocoa and earthy cedarwood",
       brewingMethods: "img/BrewingMethods1.webp",
       price: 28,
@@ -178,7 +178,7 @@ const allProducts = {
       id: 13,
       name: "Misty Grove Beans",
       description:
-        "Prepared using a natural sugarcane-based decaffeination method. This decaf espresso has all the flavour of our caffeinated varieties but without the caffeine hit. Well balanced and simply delicious, a secret gem amongst its robusta cousins.",
+        "Smooth decaf beans with balanced flavor and clean taste. Prepared using a natural sugarcane-based decaffeination method. This decaf espresso has all the flavour of our caffeinated varieties but without the caffeine hit. Well balanced and simply delicious, a secret gem amongst its robusta cousins.",
       flavourNotes: "Dark Cocoa",
       brewingMethods: "img/BrewingMethods2.webp",
       price: 28,
@@ -190,7 +190,7 @@ const allProducts = {
       id: 14,
       name: "Night Peak Beans",
       description:
-        "Experience the smooth sophistication of Mocha Velvet. This specialty blend is crafted for those who love a deep, indulgent cup. By marrying high-quality espresso beans with rich caramel undertones, we’ve created a velvety mouthfeel that lingers beautifully on the palate. It is the perfect choice for a luxurious morning latte or a comforting afternoon brew.",
+        "Rich beans with caramel notes and smooth texture. Experience the smooth sophistication of Mocha Velvet. This specialty blend is crafted for those who love a deep, indulgent cup. By marrying high-quality espresso beans with rich caramel undertones, we’ve created a velvety mouthfeel that lingers beautifully on the palate. It is the perfect choice for a luxurious morning latte or a comforting afternoon brew.",
       flavourNotes: "Black Cherry",
       brewingMethods: "img/BrewingMethods.webp",
       price: 28,
@@ -202,7 +202,7 @@ const allProducts = {
       id: 15,
       name: "Orange Peak Beans",
       description:
-        "Wake up your senses with Orange Peak, our Morning Sunlight selection. This specialty roasted Robusta is designed to provide a bright, high-energy start to your day. Unlike traditional Robusta, our careful roasting process brings out a surprising sweetness and a crisp acidity that mimics the first rays of dawn.",
+        "Bright beans with citrus flavor and refreshing morning taste. Wake up your senses with Orange Peak, our Morning Sunlight selection. This specialty roasted Robusta is designed to provide a bright, high-energy start to your day. Unlike traditional Robusta, our careful roasting process brings out a surprising sweetness and a crisp acidity that mimics the first rays of dawn.",
       flavourNotes: "Zesty Citrus",
       brewingMethods: "img/BrewingMethods2.webp",
       price: 28,
@@ -214,7 +214,7 @@ const allProducts = {
       id: 16,
       name: "Night Peak",
       description:
-        "For the bold and the brave, Night Peak offers an intense, full-bodied experience inspired by the stillness of the mountains at night. As a premium dark roast using 100% Speciality Arabica beans, it provides a powerful caffeine kick without the harsh bitterness, revealing smoky and earthy complexities in every sip.",
+        "Dark roast beans with smoky flavor and strong smooth body. For the bold and the brave, Night Peak offers an intense, full-bodied experience inspired by the stillness of the mountains at night. As a premium dark roast using 100% Speciality Arabica beans, it provides a powerful caffeine kick without the harsh bitterness, revealing smoky and earthy complexities in every sip.",
       flavourNotes: "Dark Chocolate, and Hazelnut",
       brewingMethods: "img/BrewingMethods1.webp",
       price: 28,
@@ -345,7 +345,7 @@ const allProducts = {
       id: 36,
       name: "The Royal Brewer",
       description:
-        "A luxury 19th-century style coffee maker that uses gravity and vacuum pressure to brew a premium, sediment-free cup of coffee. It’s a perfect blend of science and art.",
+        "Luxury brewer producing smooth clean coffee using vacuum technology. A luxury 19th-century style coffee maker that uses gravity and vacuum pressure to brew a premium, sediment-free cup of coffee. It’s a perfect blend of science and art.",
       price: 250,
       usage:
         "Select your preferred brewing mode on the digital interface. The machine automatically adjusts the flow rate and contact time to match your specific coffee type.",
@@ -360,7 +360,7 @@ const allProducts = {
       id: 35,
       name: "Cloud-Soft Milk Bread",
       description:
-        "Experience the fluffiest slice in town. Our Milk Bread is handcrafted using premium butter and fresh cream to create a 'cloud-like' texture that melts in your mouth. Perfect for those who crave a gentle, comforting bite.",
+        "Soft fluffy bread with buttery flavor and light texture. Experience the fluffiest slice in town. Our Milk Bread is handcrafted using premium butter and fresh cream to create a 'cloud-like' texture that melts in your mouth. Perfect for those who crave a gentle, comforting bite.",
       flavourNotes: "Rich creamy butter",
       price: 22.5,
       hotItem: true,
@@ -371,7 +371,7 @@ const allProducts = {
       id: 32,
       name: "Boutique Berry Medley",
       description:
-        "An aesthetic delight layered with soft sponge, airy cream, and a trio of forest berries. Topped with a crunchy pretzel or fresh fruit for that perfect balance.",
+        "Sweet dessert with berries cream and soft sponge layers. An aesthetic delight layered with soft sponge, airy cream, and a trio of forest berries. Topped with a crunchy pretzel or fresh fruit for that perfect balance.",
       flavourNotes: "Tart blueberry and juicy strawberry,",
       price: 23,
       hotItem: false,
@@ -382,7 +382,7 @@ const allProducts = {
       id: 34,
       name: "Tropical Mango Dream",
       description:
-        "Bring the sunshine to your palate with layers of light-as-air mousse and fresh mango purée. A refreshing, fruit-forward treat that’s both light and indulgent.",
+        "Light dessert with mango flavor and creamy smooth texture. Bring the sunshine to your palate with layers of light-as-air mousse and fresh mango purée. A refreshing, fruit-forward treat that’s both light and indulgent.",
       flavourNotes: "Ripe Alphonso mango",
       price: 24,
       hotItem: false,
@@ -393,7 +393,7 @@ const allProducts = {
       id: 31,
       name: "Heart-Shaped Waffles",
       description:
-        "Share the sweetness with our Signature Heart Waffles. Topped with fresh strawberries and velvety whipped cream, it’s the perfect aesthetic treat for your feed.",
+        "Crispy waffles with strawberries and sweet creamy topping. Share the sweetness with our Signature Heart Waffles. Topped with fresh strawberries and velvety whipped cream, it’s the perfect aesthetic treat for your feed.",
       flavourNotes: "Sweet strawberry tang",
       price: 23,
       hotItem: true,
@@ -404,7 +404,7 @@ const allProducts = {
       id: 33,
       name: "White Velvet Strawberry Cube",
       description:
-        "A masterpiece of textures featuring a buttery crumble base, topped with silky cream cheese and a vibrant strawberry glaze. Perfect for those who love a classic yet refined dessert.",
+        "Creamy dessert with strawberry glaze and smooth texture. A masterpiece of textures featuring a buttery crumble base, topped with silky cream cheese and a vibrant strawberry glaze. Perfect for those who love a classic yet refined dessert.",
       flavourNotes: "Sweet and tangy strawberry",
       price: 26,
       hotItem: false,
@@ -415,7 +415,7 @@ const allProducts = {
       id: 26,
       name: "Signature Cookie Box",
       description:
-        "Handcrafted cookies made with premium butter and rich chocolate chunks. Whether it’s for a gift or a personal treat, our Signature Box is the ultimate crowd-pleaser.",
+        "Buttery cookies with rich chocolate flavor perfect for sharing. Handcrafted cookies made with premium butter and rich chocolate chunks. Whether it’s for a gift or a personal treat, our Signature Box is the ultimate crowd-pleaser.",
       flavourNotes: "Sweet vanilla base",
       price: 25,
       hotItem: false,
@@ -426,7 +426,7 @@ const allProducts = {
       id: 27,
       name: "Guilt-Free Diet Cookie",
       description:
-        "Satisfy your cravings without the compromise. Our Diet Cookies are curated for health-conscious foodies who value ethical packaging and clean ingredients.",
+        "Healthy cookies with oats and light natural sweetness. Satisfy your cravings without the compromise. Our Diet Cookies are curated for health-conscious foodies who value ethical packaging and clean ingredients.",
       flavourNotes: "Toasted oats",
       price: 29.5,
       hotItem: false,
@@ -437,7 +437,7 @@ const allProducts = {
       id: 28,
       name: "Chocolate Cookie Pack",
       description:
-        "Handcrafted cookies made with premium butter and rich chocolate chunks. Whether it’s for a gift or a personal treat, our Signature Box is the ultimate crowd-pleaser.",
+        "Crunchy cookies with rich deep chocolate flavor inside. Handcrafted cookies made with premium butter and rich chocolate chunks. Whether it’s for a gift or a personal treat, our Signature Box is the ultimate crowd-pleaser.",
       flavourNotes: "Dark chocolate base",
       price: 18,
       hotItem: false,
@@ -448,7 +448,7 @@ const allProducts = {
       id: 29,
       name: "Special Croissant Box",
       description:
-        "Handcrafted cookies made with premium butter and rich chocolate chunks. Whether it’s for a gift or a personal treat, our Signature Box is the ultimate crowd-pleaser.",
+        "Flaky croissants with buttery layers and soft inside texture. Handcrafted cookies made with premium butter and rich chocolate chunks. Whether it’s for a gift or a personal treat, our Signature Box is the ultimate crowd-pleaser.",
       flavourNotes: "Sweet vanilla base",
       price: 27,
       hotItem: false,
@@ -459,7 +459,7 @@ const allProducts = {
       id: 30,
       name: "Oat Milk Dark Chocolate",
       description:
-        "A sophisticated, Vegan-friendly treat made with 58% unroasted cacao and creamy oat milk. Only 2g of sugar, but 100% full of rich, chocolatey goodness.",
+        "Vegan chocolate with oat milk and rich cocoa taste. A sophisticated, Vegan-friendly treat made with 58% unroasted cacao and creamy oat milk. Only 2g of sugar, but 100% full of rich, chocolatey goodness.",
       flavourNotes: "Silky oat milk creaminess, and a clean",
       price: 23,
       hotItem: false,
@@ -520,8 +520,8 @@ function renderPageProducts(filterText = "") {
     gridContainer.innerHTML = `<p class="no-results">No products found matching "${filterText}"</p>`;
     return;
   }
-
   productsToShow.forEach((product) => {
+    let firstSentence = product.description.split('.')[0] + ".";
     gridContainer.innerHTML += `
         <a href="productDetail.html?id=${product.id}" class="productCard" id="productCard">
           <img src="${product.img}" alt="${product.name}" class="productImg" />
@@ -529,21 +529,29 @@ function renderPageProducts(filterText = "") {
           <div>
             <h3 class="productTitle">${product.name}</h3>
             <p class="productPrice">$${product.price}</p>
-            ${
-              product.flavourNotes
-                ? `
+            <p class="productDes">${firstSentence}</p> 
+            
+            ${product.brewingMethods
+        ? `
+        
+              <h5 class="flavour-notes-title">Brewing Methods</h5>
+              <img src="${product.brewingMethods}" alt="${product.name} brewing method" class="productBrewMethod" />`
+        : ""
+      }
+            
+            ${product.flavourNotes
+        ? `
               <h5 class="flavour-notes-title">Flavour Notes</h5>
               <p class="flavour-notes-content">${product.flavourNotes}</p>
             `
-                : ""
-            }
-            ${
-              product.importCountry
-                ? `
+        : ""
+      }
+            ${product.importCountry
+        ? `
               <span class="productDetailCategory1">${product.importCountry}</span>
             `
-                : ""
-            }
+        : ""
+      }
           </div>
         </a>
     `;
@@ -764,19 +772,17 @@ function renderWishlist() {
       <div>
         <h3 class="productTitle">${item.name}</h3>
         <p class="productPrice">$${item.price}</p>
-        ${
-          item.flavourNotes
-            ? `
+        ${item.flavourNotes
+        ? `
               <h5 class="flavour-notes-title">Flavour Notes</h5>
               <p class="flavour-notes-content">${item.flavourNotes}</p>
             `
-            : ""
-        }
-        ${
-          item.importCountry
-            ? `<span class="productDetailCategory1">${item.importCountry}</span>`
-            : ""
-        }
+        : ""
+      }
+        ${item.importCountry
+        ? `<span class="productDetailCategory1">${item.importCountry}</span>`
+        : ""
+      }
       </div>
     </a>
     <span class="removeWishBtn" onclick="removeFromWishlist()">Remove</span>

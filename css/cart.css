@@ -98,7 +98,7 @@
 .remove-link {
   background: none;
   border: none;
-  color: #1a1a2e; /* မင်းရဲ့ primary color */
+  color: #1a1a2e; 
   text-decoration: underline;
   font-size: 14px;
   cursor: pointer;
@@ -112,7 +112,6 @@
     margin-bottom: 10px;
 }
 .cart-footer {
-
     padding: 20px 15px;
 }
 .cart-total {

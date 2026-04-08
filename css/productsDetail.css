@@ -127,7 +127,7 @@
 }
 
 #price-btn:hover {
-    background: #6b1b13;
+    background: var();
 }
 .flavourNotesDiv {
     margin-bottom: 25px;

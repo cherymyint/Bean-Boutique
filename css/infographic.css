@@ -36,12 +36,13 @@
 .brewMethodsInfo2:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}.section-title {
-  width: 100%; /* Title ကို တစ်ကြောင်းလုံး နေရာယူစေဖို့ */
+}
+.section-title {
+  width: 100%;
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 40px;
-  color: #333; /* သင့် website theme အတိုင်း အရောင်ပြောင်းနိုင်ပါတယ် */
+  color: #333;
   font-weight: bold;
 }
 @media (max-width: 1408px) {
