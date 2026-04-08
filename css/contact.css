@@ -104,7 +104,7 @@
 }
 
 .contactBtn:hover {
-    background: #751005;
+    background: var(--hover-primary-color);
 }
 
 .contact1 {

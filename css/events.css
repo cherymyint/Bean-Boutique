@@ -28,9 +28,13 @@
     font-size: 24px;
     font-family: var(--secondary-font-family);
     margin-bottom: 20px;
-
+    color: var(--primary-color);
 }
 .eventsCard-para {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
     font-size: 16px;
     color: var(--body-text-color);
     line-height: 25px;

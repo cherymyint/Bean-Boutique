@@ -26,6 +26,17 @@ body {
   align-items: center;
   background-color: #49313127;
 }
+.productDes {
+  font-size: 14px;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  line-height: 18px;
+  font-weight: 300;
+}
+.productBrewMethod {
+  width: 100%;
+  padding: 0 0 12px 0;
+}
 .productCard {
   display: flex;
   flex-direction: column;
@@ -34,7 +45,8 @@ body {
   position: relative;
   padding: 20px;
   border-radius: 12px;
-  width: 250px; 
+  width: 300px; 
+  min-height: 400px;
   box-sizing: border-box; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
@@ -78,7 +90,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: var(--primary-color);
-  margin-bottom: 5px;
+  margin: 8px 0;
 }
 
 .flavour-notes-content {

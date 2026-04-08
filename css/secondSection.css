@@ -213,7 +213,8 @@
     }
 
     .getCoffeeFixTitle {
-        font-size: 32px;
+        font-size: 30px;
+        text-align: center;
     }
 
     .coffeeBag {
@@ -251,6 +252,6 @@
     }
 
     .getCoffeeFixTitle {
-        font-size: 32px;
+        font-size: 30px;
     }
 }
